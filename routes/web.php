@@ -83,7 +83,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
         if (!$infusion->isActive()) {
             return redirect()->back()->with('error', 'Infus sudah ditandai selesai.');
         }
-        $infusion->gantiInfus();
+
+        try {
+            $newInfusion = $infusion->gantiInfus();
+            if (!$newInfusion) {
+                return redirect()->back()->with('error', 'Gagal membuat infus baru.');
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+
         return redirect()->route('dashboard');
     })->name('infusions.ganti');
 
@@ -92,6 +101,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Infusion::findOrFail($id)->delete();
         return redirect()->back();
     })->name('infusions.destroy');
+
+    // ==========================================
+    // LOG VIEWER (DEBUG)
+    // ==========================================
+    Route::get('/logs', function () {
+        $logPath = storage_path('logs/infusion.log');
+        $logs = '';
+        if (file_exists($logPath)) {
+            $logs = file_get_contents($logPath);
+        }
+        return Inertia::render('LogViewer', [
+            'logs' => $logs,
+        ]);
+    })->name('logs.viewer');
 
     // ==========================================
     // PENGATURAN PROFIL

@@ -12,6 +12,7 @@ class InfusionLog extends Model
     protected $fillable = [
         'infusion_id',
         'volume_recorded',
+        'tpm',
     ];
 
     public function infusion()
