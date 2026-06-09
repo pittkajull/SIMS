@@ -28,7 +28,7 @@ export default function AuthenticatedLayout({ header, children }) {
 
             {/* Header Area */}
             {header && (
-                <header className="relative z-50 bg-white/90 backdrop-blur-2xl border-b border-slate-200 shadow-sm supports-[backdrop-filter]:bg-white/70 transition-all">
+                <header className="relative z-50 bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-300">
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400"></div>
                     <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
                         {header}

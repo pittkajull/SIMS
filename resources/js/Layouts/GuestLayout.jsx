@@ -42,7 +42,7 @@ export default function Guest({ children }) {
                     </p>
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-2xl p-8 sm:p-10 rounded-[2.5rem] shadow-[0_20px_60px_rgba(16,185,129,0.1)] border border-emerald-100 animate-fadeInUp relative overflow-hidden">
+                <div className="bg-white/95 backdrop-blur-xl p-8 sm:p-10 rounded-[2.5rem] shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-slate-100 animate-fadeInUp relative overflow-hidden transition-all duration-300">
                     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400"></div>
                     {children}
                 </div>

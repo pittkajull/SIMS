@@ -115,10 +115,10 @@ export default function Dashboard({ auth, infusions = [] }) {
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Link href="/logs" className="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)] flex items-center gap-2 transition-all active:scale-95">
+                        <Link href="/logs" className="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)] flex items-center gap-2 transition-all duration-200 active:scale-95">
                             <Terminal size={14} className="sm:w-4 sm:h-4" /> Log
                         </Link>
-                        <button onClick={() => setIsModalOpen(true)} className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-[0_4px_12px_rgba(16,185,129,0.25)] hover:shadow-[0_6px_16px_rgba(16,185,129,0.35)] flex items-center gap-2 transition-all active:scale-95">
+                        <button onClick={() => setIsModalOpen(true)} className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-[0_4px_12px_rgba(16,185,129,0.25)] hover:shadow-[0_6px_16px_rgba(16,185,129,0.35)] flex items-center gap-2 transition-all duration-200 active:scale-95">
                             <Plus size={14} className="sm:w-4 sm:h-4" /> Pasien Baru
                         </button>
 
@@ -205,7 +205,7 @@ export default function Dashboard({ auth, infusions = [] }) {
                 {/* PATIENT GRID */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {infusions.map((item) => (
-                        <div key={item.id} className={`rounded-2xl sm:rounded-[32px] p-4 sm:p-6 border transition-all ${item.status === 'warning' ? 'bg-gradient-to-br from-rose-50 to-white border-rose-200 shadow-[0_4px_20px_rgba(244,63,94,0.1)]' : 'bg-gradient-to-br from-white to-slate-50/50 border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]'}`}>
+                        <div key={item.id} className={`rounded-2xl sm:rounded-[32px] p-4 sm:p-6 border transition-all duration-300 ${item.status === 'warning' ? 'bg-gradient-to-br from-rose-50 to-white border-rose-200 shadow-[0_4px_20px_rgba(244,63,94,0.1)]' : 'bg-gradient-to-br from-white to-slate-50/50 border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-0.5'}`}>
                             <div className="flex justify-between items-start mb-4 sm:mb-6">
                                 <div className="flex items-start gap-3 sm:gap-4">
                                     <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center font-black text-base sm:text-lg shadow-md ${item.status === 'warning' ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-[0_4px_12px_rgba(244,63,94,0.3)]' : 'bg-gradient-to-br from-slate-700 to-slate-800 text-white'}`}>{item.room_number}</div>
@@ -241,7 +241,7 @@ export default function Dashboard({ auth, infusions = [] }) {
                                         </div>
                                         {/* Progress bar */}
                                         <div className="h-2 sm:h-2.5 bg-slate-200 rounded-full overflow-hidden">
-                                            <div className={`h-full rounded-full transition-all duration-1000 ${item.status === 'warning' ? 'bg-gradient-to-r from-rose-400 to-rose-600 shadow-[0_0_10px_rgba(244,63,94,0.4)]' : 'bg-gradient-to-r from-emerald-400 to-teal-500 shadow-[0_0_10px_rgba(16,185,129,0.4)]'}`} style={{ width: `${item.percentage_remaining}%` }}></div>
+                                            <div className={`h-full rounded-full transition-all duration-700 ease-out ${item.status === 'warning' ? 'bg-gradient-to-r from-rose-400 to-rose-600 shadow-[0_0_10px_rgba(244,63,94,0.4)]' : 'bg-gradient-to-r from-emerald-400 to-teal-500 shadow-[0_0_10px_rgba(16,185,129,0.4)]'}`} style={{ width: `${item.percentage_remaining}%` }}></div>
                                         </div>
                                         <div className="flex justify-between mt-1.5 sm:mt-2 text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                                             <span><Clock size={10} className="inline mr-1" /> {item.estimated_time_remaining}</span>
@@ -252,7 +252,7 @@ export default function Dashboard({ auth, infusions = [] }) {
                             </div>
 
                             {/* TOMBOL LIHAT CHARTING */}
-                            <Link href={`/recap/${item.id}`} className="w-full mt-3 sm:mt-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-white shadow-[0_4px_12px_rgba(16,185,129,0.25)] hover:shadow-[0_6px_16px_rgba(16,185,129,0.35)] hover:from-emerald-400 hover:to-teal-500 transition-all active:scale-[0.98]">
+                            <Link href={`/recap/${item.id}`} className="w-full mt-3 sm:mt-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-white shadow-[0_4px_12px_rgba(16,185,129,0.25)] hover:shadow-[0_6px_16px_rgba(16,185,129,0.35)] hover:from-emerald-400 hover:to-teal-500 transition-all duration-200 active:scale-[0.98]">
                                 <FileText size={14} className="sm:w-4 sm:h-4" /> Lihat Charting
                             </Link>
 
@@ -261,7 +261,7 @@ export default function Dashboard({ auth, infusions = [] }) {
                                 if (confirm(`Ganti infus untuk ${item.patient_name}? Infus lama akan ditandai selesai.`)) {
                                     router.post(`/infusions/${item.id}/ganti`, {}, { preserveScroll: true });
                                 }
-                            }} className="w-full mt-2 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white border border-amber-200 flex items-center justify-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-amber-600 hover:bg-amber-50 hover:border-amber-300 hover:shadow-[0_4px_12px_rgba(245,158,11,0.15)] transition-all active:scale-[0.98]">
+                            }} className="w-full mt-2 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white border border-amber-200 flex items-center justify-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-amber-600 hover:bg-amber-50 hover:border-amber-300 hover:shadow-[0_4px_12px_rgba(245,158,11,0.15)] transition-all duration-200 active:scale-[0.98]">
                                 <RefreshCw size={14} className="sm:w-4 sm:h-4" /> Ganti Infus
                             </button>
                         </div>
@@ -272,21 +272,21 @@ export default function Dashboard({ auth, infusions = [] }) {
             {/* MODAL INPUT FIXED SCROLL */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4">
-                    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md" onClick={() => setIsModalOpen(false)}></div>
+                    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity duration-300" onClick={() => setIsModalOpen(false)}></div>
                     <div className="bg-white rounded-2xl sm:rounded-[32px] shadow-2xl w-full max-w-xl relative z-10 flex flex-col max-h-[90vh] overflow-hidden animate-[popIn_0.3s_ease-out]">
-                        <div className="bg-slate-50 border-b border-slate-200 p-4 sm:p-6 text-center shrink-0 relative">
-                            <button onClick={() => setIsModalOpen(false)} className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 bg-white rounded-full text-slate-400 hover:text-rose-600 border border-slate-200 shadow-sm"><X size={18} className="sm:w-5 sm:h-5" /></button>
-                            <h3 className="text-lg sm:text-xl font-black text-slate-800 uppercase tracking-tight">Setup Pasien Baru</h3>
+                        <div className="bg-slate-50 border-b border-slate-100 p-4 sm:p-6 text-center shrink-0 relative">
+                            <button onClick={() => setIsModalOpen(false)} className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 bg-white rounded-full text-slate-400 hover:text-rose-500 border border-slate-200 shadow-sm transition-all duration-200 hover:shadow-md"><X size={18} className="sm:w-5 sm:h-5" /></button>
+                            <h3 className="text-lg sm:text-xl font-bold text-slate-800">Setup Pasien Baru</h3>
                         </div>
                         <div className="p-4 sm:p-8 overflow-y-auto">
                             <form onSubmit={submit} className="space-y-4 sm:space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                                    <div><label className="text-[10px] font-bold text-slate-500 mb-1.5 sm:mb-2 block uppercase tracking-widest">Nama Pasien</label><input required type="text" value={data.patient_name} onChange={e => setData('patient_name', e.target.value)} className="w-full bg-slate-50 border-slate-200 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm font-bold focus:bg-white outline-none" /></div>
-                                    <div><label className="text-[10px] font-bold text-slate-500 mb-1.5 sm:mb-2 block uppercase tracking-widest">No Bed</label><input required type="text" value={data.room_number} onChange={e => setData('room_number', e.target.value)} className="w-full bg-slate-50 border-slate-200 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm font-bold focus:bg-white outline-none" /></div>
+                                    <div><label className="text-[10px] font-bold text-slate-500 mb-1.5 sm:mb-2 block uppercase tracking-widest">Nama Pasien</label><input required type="text" value={data.patient_name} onChange={e => setData('patient_name', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm font-bold focus:bg-white focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 outline-none transition-all duration-200" /></div>
+                                    <div><label className="text-[10px] font-bold text-slate-500 mb-1.5 sm:mb-2 block uppercase tracking-widest">No Bed</label><input required type="text" value={data.room_number} onChange={e => setData('room_number', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm font-bold focus:bg-white focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 outline-none transition-all duration-200" /></div>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                                    <div><label className="text-[10px] font-bold text-slate-500 mb-1.5 sm:mb-2 block uppercase tracking-widest">Jenis Cairan</label><select value={data.fluid_type} onChange={e => setData('fluid_type', e.target.value)} className="w-full bg-slate-50 border-slate-200 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm font-bold outline-none"><option value="RL">RL</option><option value="NaCl">NaCl</option><option value="Dextrose">Dextrose</option></select></div>
-                                    <div><label className="text-[10px] font-bold text-slate-500 mb-1.5 sm:mb-2 block uppercase tracking-widest">Rate (ml/h)</label><input required type="number" value={data.flowrate} onChange={e => setData('flowrate', e.target.value)} className="w-full bg-slate-50 border-slate-200 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm font-bold outline-none" /></div>
+                                    <div><label className="text-[10px] font-bold text-slate-500 mb-1.5 sm:mb-2 block uppercase tracking-widest">Jenis Cairan</label><select value={data.fluid_type} onChange={e => setData('fluid_type', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm font-bold outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"><option value="RL">RL</option><option value="NaCl">NaCl</option><option value="Dextrose">Dextrose</option></select></div>
+                                    <div><label className="text-[10px] font-bold text-slate-500 mb-1.5 sm:mb-2 block uppercase tracking-widest">Rate (ml/h)</label><input required type="number" value={data.flowrate} onChange={e => setData('flowrate', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm font-bold outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200" /></div>
                                 </div>
                                 <div className="bg-slate-50 p-4 sm:p-5 rounded-xl sm:rounded-[24px] border border-slate-200">
                                     <label className="text-[10px] font-bold text-slate-500 mb-2 sm:mb-3 block text-center uppercase tracking-widest">Volume (ml)</label>
@@ -297,7 +297,7 @@ export default function Dashboard({ auth, infusions = [] }) {
                                     <label className="text-[10px] font-bold text-slate-500 mb-2 sm:mb-3 block uppercase tracking-widest">Tipe Infus Set</label>
                                     <div className="flex gap-3 sm:gap-4">{['Makro', 'Mikro'].map(t => (<button key={t} type="button" onClick={() => setData('drip_type', t)} className={`flex-1 py-3 sm:py-4 rounded-lg sm:rounded-xl font-black text-xs uppercase transition-all border-2 ${data.drip_type === t ? 'bg-white border-emerald-500 text-emerald-600 shadow-sm' : 'bg-white border-slate-200 text-slate-500'}`}>{t} Set</button>))}</div>
                                 </div>
-                                <button disabled={processing} className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-4 sm:py-5 rounded-xl sm:rounded-[20px] font-black text-xs sm:text-sm uppercase tracking-widest shadow-[0_8px_24px_rgba(16,185,129,0.3)] hover:shadow-[0_12px_32px_rgba(16,185,129,0.4)] active:scale-95 transition-all disabled:opacity-70">Mulai Monitoring</button>
+                                <button disabled={processing} className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white py-4 sm:py-5 rounded-xl sm:rounded-[20px] font-black text-xs sm:text-sm uppercase tracking-widest shadow-[0_8px_24px_rgba(16,185,129,0.3)] hover:shadow-[0_12px_32px_rgba(16,185,129,0.4)] active:scale-[0.98] transition-all duration-200 disabled:opacity-70">Mulai Monitoring</button>
                             </form>
                         </div>
                     </div>
