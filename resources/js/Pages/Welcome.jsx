@@ -1,5 +1,5 @@
 import { Head, Link } from '@inertiajs/react';
-import { Activity, Droplet, ShieldAlert, ArrowRight, HeartPulse, Clock, LineChart, Server } from 'lucide-react';
+import { Activity, Droplet, ShieldAlert, ArrowRight, HeartPulse, Clock, LineChart, Server, AlertCircle } from 'lucide-react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import { useEffect, useState, useRef } from 'react';
 
