@@ -3,6 +3,7 @@ import { Head, router, useForm, Link } from '@inertiajs/react';
 import { useEffect, useState, useRef } from 'react';
 import { Activity, Droplet, AlertCircle, Users, Clock, Plus, X, FileText, HeartPulse, Stethoscope, Bell, RefreshCw, Terminal } from 'lucide-react';
 import InfusionBag from '@/Components/InfusionBag';
+import ApplicationLogo from '@/Components/ApplicationLogo';
 
 export default function Dashboard({ auth, infusions = [] }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,16 +102,14 @@ export default function Dashboard({ auth, infusions = [] }) {
             header={
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-5 relative z-20">
                     <div className="flex items-center gap-5">
-                        <div className="relative bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200">
-                            <Activity className="text-emerald-500 animate-pulse" size={28} />
-                        </div>
+                        <ApplicationLogo className="w-12 h-12 object-contain drop-shadow-md" />
                         <div>
                             <div className="flex items-center gap-3">
                                 <h2 className="font-black text-3xl tracking-tighter text-slate-800 leading-none">RSUD BANTEN</h2>
                                 <span className="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-600 text-[9px] font-black tracking-widest border border-emerald-100 uppercase">Live</span>
                             </div>
                             <p className="text-[11px] text-slate-500 font-bold uppercase tracking-[0.3em] mt-2 flex items-center gap-2">
-                                <Stethoscope size={12} className="text-emerald-500" /> Smart Infusion Monitoring System
+                                <Activity size={12} className="text-emerald-500" /> Smart Infusion Monitoring System
                             </p>
                         </div>
                     </div>

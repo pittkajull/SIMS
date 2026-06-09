@@ -1,5 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
-import { Activity, Droplet, ShieldAlert, ArrowRight, Stethoscope, HeartPulse, Clock, LineChart, Server } from 'lucide-react';
+import { Activity, Droplet, ShieldAlert, ArrowRight, HeartPulse, Clock, LineChart, Server } from 'lucide-react';
+import ApplicationLogo from '@/Components/ApplicationLogo';
 import { useEffect, useState, useRef } from 'react';
 
 const RevealOnScroll = ({ children, delay = 0, className = "" }) => {
@@ -73,9 +74,7 @@ export default function Welcome({ auth }) {
             <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 py-4 shadow-sm' : 'bg-transparent py-6'}`}>
                 <div className="max-w-[1400px] mx-auto px-6 flex justify-between items-center">
                     <div className="flex items-center gap-4">
-                        <div className="p-2.5 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-[0_8px_20px_rgba(16,185,129,0.2)]">
-                            <Stethoscope className="text-white" size={24} strokeWidth={2.5} />
-                        </div>
+                        <ApplicationLogo className="w-12 h-12 object-contain drop-shadow-md" />
                         <div>
                             <h1 className="font-black text-2xl tracking-tight text-slate-800 leading-none">RSUD BANTEN</h1>
                             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 mt-1">Smart Infusion Monitoring System</p>
@@ -259,8 +258,8 @@ export default function Welcome({ auth }) {
                         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSJyZ2JhKDAsMCwwLDAuMDMpIi8+Cjwvc3ZnPg==')] opacity-50"></div>
                         
                         <div className="relative z-10">
-                            <div className="w-20 h-20 bg-white border border-emerald-100 rounded-2xl flex items-center justify-center text-emerald-500 mx-auto mb-8 shadow-sm">
-                                <Stethoscope size={40} />
+                            <div className="mx-auto mb-8">
+                                <ApplicationLogo className="w-28 h-28 object-contain drop-shadow-lg" />
                             </div>
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-800 tracking-tight mb-8">Transformasi Perawatan <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Dimulai dari Sini</span></h2>
                             <p className="text-slate-600 text-lg mb-12 max-w-2xl mx-auto font-medium">Tingkatkan efisiensi operasional rumah sakit dan berikan ketenangan pikiran bagi pasien dengan platform pemantauan infus yang inovatif.</p>
@@ -285,9 +284,7 @@ export default function Welcome({ auth }) {
                 <div className="max-w-[1400px] mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
                         <div className="flex items-center gap-4">
-                            <div className="p-2 bg-white border border-slate-200 rounded-lg text-emerald-500">
-                                <Stethoscope size={24} />
-                            </div>
+                            <ApplicationLogo className="w-11 h-11 object-contain drop-shadow-sm" />
                             <div>
                                 <h3 className="font-black text-xl text-slate-800 tracking-tight">RSUD BANTEN</h3>
                                 <p className="text-[9px] font-bold text-emerald-600 uppercase tracking-widest mt-0.5">SIMS Dashboard</p>

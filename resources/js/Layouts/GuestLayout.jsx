@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { Stethoscope } from 'lucide-react';
+import ApplicationLogo from '@/Components/ApplicationLogo';
 
 export default function Guest({ children }) {
     return (
@@ -32,8 +32,8 @@ export default function Guest({ children }) {
                         className="relative group mb-6"
                     >
                         <div className="absolute inset-0 bg-emerald-400 blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-full"></div>
-                        <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-5 rounded-[2rem] shadow-xl relative z-10 border border-emerald-400/50 group-hover:scale-110 transition-transform duration-300">
-                            <Stethoscope className="w-10 h-10 text-white group-hover:animate-pulse" strokeWidth={2.5} />
+                        <div className="relative z-10 group-hover:scale-110 transition-transform duration-300">
+                            <ApplicationLogo className="w-24 h-24 object-contain drop-shadow-lg" />
                         </div>
                     </Link>
                     <h2 className="text-4xl font-black text-slate-800 tracking-tighter leading-none mb-2">RSUD BANTEN</h2>
