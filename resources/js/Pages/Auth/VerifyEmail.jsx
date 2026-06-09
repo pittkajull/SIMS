@@ -33,7 +33,7 @@ export default function VerifyEmail({ status }) {
             <form onSubmit={submit} className="mt-8 flex flex-col gap-4">
                 <button
                     disabled={processing}
-                    className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white py-4 rounded-[20px] font-black text-xs uppercase tracking-widest shadow-[0_8px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.3)] transition-all active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:pointer-events-none"
+                    className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white py-4 rounded-[20px] font-black text-sm uppercase tracking-widest shadow-[0_8px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.3)] transition-all active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:pointer-events-none"
                 >
                     {processing ? 'Mengirim Ulang...' : (
                         <>
@@ -46,7 +46,7 @@ export default function VerifyEmail({ status }) {
                     href={route('logout')}
                     method="post"
                     as="button"
-                    className="w-full bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 py-4 rounded-[20px] font-black text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
+                    className="w-full bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 py-4 rounded-[20px] font-black text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
                 >
                     <LogOut size={16} strokeWidth={2.5} /> Keluar Sementara
                 </Link>

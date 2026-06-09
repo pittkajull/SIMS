@@ -26,69 +26,69 @@ export default function Register() {
                 <p className="text-slate-500 text-sm mt-1.5 font-medium">Registrasi akses tenaga medis</p>
             </div>
 
-            <form onSubmit={submit} className="space-y-4">
+            <form onSubmit={submit} className="space-y-5">
                 <div className="group">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1.5 ml-1 tracking-widest">Nama Lengkap</label>
+                    <label className="text-[10px] font-bold text-slate-500 uppercase block mb-2 ml-1 tracking-widest">Nama Lengkap</label>
                     <div className="relative">
                         <input
                             type="text"
                             value={data.name}
                             onChange={(e) => setData('name', e.target.value)}
-                            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 pl-11 text-sm font-bold text-slate-800 focus:bg-white focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 outline-none transition-all placeholder:font-medium placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 pl-12 text-sm font-bold text-slate-800 focus:bg-white focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 outline-none transition-all placeholder:font-medium placeholder:text-slate-400 shadow-sm"
                             placeholder="Nama perawat"
                             required
                         />
                         <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-emerald-500 transition-colors" size={16} strokeWidth={2.5} />
                     </div>
-                    {errors.name && <div className="text-rose-500 text-[10px] uppercase tracking-wider mt-1.5 font-bold ml-1">{errors.name}</div>}
+                    {errors.name && <div className="text-rose-500 text-[10px] uppercase tracking-wider mt-2 font-bold ml-1">{errors.name}</div>}
                 </div>
 
                 <div className="group">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1.5 ml-1 tracking-widest">Email Medis</label>
+                    <label className="text-[10px] font-bold text-slate-500 uppercase block mb-2 ml-1 tracking-widest">Email Medis</label>
                     <div className="relative">
                         <input
                             type="email"
                             value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
-                            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 pl-11 text-sm font-bold text-slate-800 focus:bg-white focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 outline-none transition-all placeholder:font-medium placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 pl-12 text-sm font-bold text-slate-800 focus:bg-white focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 outline-none transition-all placeholder:font-medium placeholder:text-slate-400 shadow-sm"
                             placeholder="nama@rsud.banten.go.id"
                             required
                         />
                         <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-emerald-500 transition-colors" size={16} strokeWidth={2.5} />
                     </div>
-                    {errors.email && <div className="text-rose-500 text-[10px] uppercase tracking-wider mt-1.5 font-bold ml-1">{errors.email}</div>}
+                    {errors.email && <div className="text-rose-500 text-[10px] uppercase tracking-wider mt-2 font-bold ml-1">{errors.email}</div>}
                 </div>
 
                 <div className="group">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1.5 ml-1 tracking-widest">Password</label>
+                    <label className="text-[10px] font-bold text-slate-500 uppercase block mb-2 ml-1 tracking-widest">Password</label>
                     <div className="relative">
                         <input
                             type="password"
                             value={data.password}
                             onChange={(e) => setData('password', e.target.value)}
-                            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 pl-11 text-sm font-bold text-slate-800 focus:bg-white focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 outline-none transition-all placeholder:font-medium placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 pl-12 text-sm font-bold text-slate-800 focus:bg-white focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 outline-none transition-all placeholder:font-medium placeholder:text-slate-400 shadow-sm"
                             placeholder="••••••••"
                             required
                         />
                         <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-emerald-500 transition-colors" size={16} strokeWidth={2.5} />
                     </div>
-                    {errors.password && <div className="text-rose-500 text-[10px] uppercase tracking-wider mt-1.5 font-bold ml-1">{errors.password}</div>}
+                    {errors.password && <div className="text-rose-500 text-[10px] uppercase tracking-wider mt-2 font-bold ml-1">{errors.password}</div>}
                 </div>
 
                 <div className="group">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1.5 ml-1 tracking-widest">Konfirmasi Password</label>
+                    <label className="text-[10px] font-bold text-slate-500 uppercase block mb-2 ml-1 tracking-widest">Konfirmasi Password</label>
                     <div className="relative">
                         <input
                             type="password"
                             value={data.password_confirmation}
                             onChange={(e) => setData('password_confirmation', e.target.value)}
-                            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 pl-11 text-sm font-bold text-slate-800 focus:bg-white focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 outline-none transition-all placeholder:font-medium placeholder:text-slate-400 shadow-sm"
+                            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 pl-12 text-sm font-bold text-slate-800 focus:bg-white focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 outline-none transition-all placeholder:font-medium placeholder:text-slate-400 shadow-sm"
                             placeholder="••••••••"
                             required
                         />
                         <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-emerald-500 transition-colors" size={16} strokeWidth={2.5} />
                     </div>
-                    {errors.password_confirmation && <div className="text-rose-500 text-[10px] uppercase tracking-wider mt-1.5 font-bold ml-1">{errors.password_confirmation}</div>}
+                    {errors.password_confirmation && <div className="text-rose-500 text-[10px] uppercase tracking-wider mt-2 font-bold ml-1">{errors.password_confirmation}</div>}
                 </div>
 
                 <button
