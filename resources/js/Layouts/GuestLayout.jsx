@@ -8,18 +8,18 @@ export default function Guest({ children }) {
             {/* Background Effects matching Welcome.jsx */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute inset-0 bg-emerald-50/40"></div>
-                <div className="absolute inset-0 bg-[radial-gradient(#10b981_1.5px,transparent_1.5px)] [background-size:40px_40px] opacity-[0.08] [mask-image:linear-gradient(to_bottom,black,transparent_80%)]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(#10b981_1.5px,transparent_1.5px)] [background-size:40px_40px] opacity-[0.12] [mask-image:linear-gradient(to_bottom,black,transparent_80%)]"></div>
                 <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[1200px] h-[700px] rounded-[100%] bg-gradient-to-b from-emerald-200/60 via-teal-100/30 to-transparent blur-3xl"></div>
-                <div className="absolute top-[5%] -left-20 w-[600px] h-[600px] rounded-full bg-emerald-300/30 blur-[120px] animate-blob mix-blend-multiply"></div>
-                <div className="absolute top-[15%] -right-20 w-[600px] h-[600px] rounded-full bg-teal-300/20 blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply"></div>
-                <div className="absolute -bottom-40 left-1/3 w-[800px] h-[800px] rounded-full bg-emerald-200/40 blur-[150px] animate-blob animation-delay-4000 mix-blend-multiply"></div>
-                <div className="absolute top-1/4 left-[5%] w-[40vw] h-[40vw] border-[0.5px] border-emerald-500/20 rounded-full animate-[spin_120s_linear_infinite]"></div>
-                <div className="absolute top-1/3 right-[5%] w-[30vw] h-[30vw] border-[0.5px] border-teal-500/20 rounded-full animate-[spin_90s_linear_infinite] border-dashed"></div>
+                <div className="absolute top-[5%] -left-20 w-[600px] h-[600px] rounded-full bg-emerald-300/50 blur-[120px] animate-blob mix-blend-multiply"></div>
+                <div className="absolute top-[15%] -right-20 w-[600px] h-[600px] rounded-full bg-teal-300/40 blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply"></div>
+                <div className="absolute -bottom-40 left-1/3 w-[800px] h-[800px] rounded-full bg-emerald-200/50 blur-[150px] animate-blob animation-delay-4000 mix-blend-multiply"></div>
+                <div className="absolute top-1/4 left-[5%] w-[40vw] h-[40vw] border-[1px] border-emerald-500/15 rounded-full animate-[spin_120s_linear_infinite]"></div>
+                <div className="absolute top-1/3 right-[5%] w-[30vw] h-[30vw] border-[1px] border-teal-500/15 rounded-full animate-[spin_90s_linear_infinite] border-dashed"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-50/50 to-emerald-50/80"></div>
             </div>
 
             {/* Slow moving EKG line - purely decorative */}
-            <div className="absolute inset-0 pointer-events-none opacity-[0.05] flex items-center justify-center">
+            <div className="absolute inset-0 pointer-events-none opacity-[0.10] flex items-center justify-center">
                 <svg className="w-[150%] h-64 animate-[dash_30s_linear_infinite]" viewBox="0 0 1000 100" preserveAspectRatio="none">
                     <path fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="20 10" d="M0,50 L200,50 L220,10 L240,90 L260,50 L1000,50" />
                 </svg>
@@ -42,7 +42,8 @@ export default function Guest({ children }) {
                     </p>
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-2xl p-8 sm:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-200 animate-fadeInUp">
+                <div className="bg-white/90 backdrop-blur-2xl p-8 sm:p-10 rounded-[2.5rem] shadow-[0_20px_60px_rgba(16,185,129,0.1)] border border-emerald-100 animate-fadeInUp relative overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400"></div>
                     {children}
                 </div>
             </div>

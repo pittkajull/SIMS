@@ -115,10 +115,10 @@ export default function Dashboard({ auth, infusions = [] }) {
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Link href="/logs" className="bg-white text-slate-600 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-sm hover:bg-slate-50 border border-slate-200 flex items-center gap-2 transition-all active:scale-95">
+                        <Link href="/logs" className="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)] flex items-center gap-2 transition-all active:scale-95">
                             <Terminal size={14} className="sm:w-4 sm:h-4" /> Log
                         </Link>
-                        <button onClick={() => setIsModalOpen(true)} className="bg-white text-emerald-600 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-sm hover:bg-emerald-50 border border-slate-200 flex items-center gap-2 transition-all active:scale-95">
+                        <button onClick={() => setIsModalOpen(true)} className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-[0_4px_12px_rgba(16,185,129,0.25)] hover:shadow-[0_6px_16px_rgba(16,185,129,0.35)] flex items-center gap-2 transition-all active:scale-95">
                             <Plus size={14} className="sm:w-4 sm:h-4" /> Pasien Baru
                         </button>
 
@@ -183,30 +183,32 @@ export default function Dashboard({ auth, infusions = [] }) {
 
                 {/* STATS */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-6 sm:mb-10">
-                    <div className="bg-white rounded-2xl sm:rounded-[24px] border border-slate-200 p-4 sm:p-6 flex flex-col justify-between h-28 sm:h-40 shadow-sm">
-                        <div className="flex justify-between items-start">
-                            <div><p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 sm:mb-2">Total Pasien</p><p className="text-3xl sm:text-5xl font-black text-slate-800 tracking-tighter">{totalPatients}</p></div>
-                            <div className="bg-emerald-50 p-2 sm:p-3.5 rounded-xl sm:rounded-2xl text-emerald-600 border border-emerald-100"><Users size={18} className="sm:w-6 sm:h-6" /></div>
+                    <div className="bg-gradient-to-br from-white to-emerald-50/50 rounded-2xl sm:rounded-[24px] border border-emerald-100 p-4 sm:p-6 flex flex-col justify-between h-28 sm:h-40 shadow-[0_4px_20px_rgba(16,185,129,0.08)] hover:shadow-[0_8px_30px_rgba(16,185,129,0.12)] transition-shadow relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-emerald-400 to-teal-500 rounded-l-2xl sm:rounded-l-[24px]"></div>
+                        <div className="flex justify-between items-start pl-2">
+                            <div><p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-1 sm:mb-2">Total Pasien</p><p className="text-3xl sm:text-5xl font-black text-slate-800 tracking-tighter">{totalPatients}</p></div>
+                            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-2 sm:p-3.5 rounded-xl sm:rounded-2xl text-white shadow-[0_4px_12px_rgba(16,185,129,0.3)]"><Users size={18} className="sm:w-6 sm:h-6" /></div>
                         </div>
-                        <div className="text-[10px] sm:text-xs font-bold text-emerald-600 bg-emerald-50 w-max px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-emerald-100">Active Monitoring</div>
+                        <div className="text-[10px] sm:text-xs font-bold text-emerald-600 bg-emerald-100/60 w-max px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg">Active Monitoring</div>
                     </div>
 
-                    <div className="bg-white rounded-2xl sm:rounded-[24px] border border-slate-200 p-4 sm:p-6 flex flex-col justify-between h-28 sm:h-40 shadow-sm">
-                        <div className="flex justify-between items-start">
-                            <div><p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 sm:mb-2">Status Kritis</p><p className={`text-3xl sm:text-5xl font-black tracking-tighter ${criticalCount > 0 ? 'text-rose-600' : 'text-slate-800'}`}>{criticalCount}</p></div>
-                            <div className={`p-2 sm:p-3.5 rounded-xl sm:rounded-2xl border ${criticalCount > 0 ? 'bg-rose-50 text-rose-600 border-rose-100 animate-pulse' : 'bg-slate-50 text-slate-400'}`}><AlertCircle size={18} className="sm:w-6 sm:h-6" /></div>
+                    <div className={`bg-gradient-to-br from-white ${criticalCount > 0 ? 'to-rose-50/50 border-rose-200 shadow-[0_4px_20px_rgba(244,63,94,0.08)]' : 'to-slate-50/50 border-slate-200 shadow-sm'} rounded-2xl sm:rounded-[24px] border p-4 sm:p-6 flex flex-col justify-between h-28 sm:h-40 transition-shadow relative overflow-hidden`}>
+                        <div className={`absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b ${criticalCount > 0 ? 'from-rose-400 to-rose-600' : 'from-slate-300 to-slate-400'} rounded-l-2xl sm:rounded-l-[24px]`}></div>
+                        <div className="flex justify-between items-start pl-2">
+                            <div><p className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 sm:mb-2 ${criticalCount > 0 ? 'text-rose-500' : 'text-slate-400'}`}>Status Kritis</p><p className={`text-3xl sm:text-5xl font-black tracking-tighter ${criticalCount > 0 ? 'text-rose-600' : 'text-slate-800'}`}>{criticalCount}</p></div>
+                            <div className={`p-2 sm:p-3.5 rounded-xl sm:rounded-2xl ${criticalCount > 0 ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-[0_4px_12px_rgba(244,63,94,0.3)] animate-pulse' : 'bg-slate-100 text-slate-400'}`}><AlertCircle size={18} className="sm:w-6 sm:h-6" /></div>
                         </div>
-                        <div className="text-[10px] sm:text-xs font-bold">{criticalCount > 0 ? <span className="text-rose-600">Butuh Perhatian!</span> : <span className="text-slate-500">Normal</span>}</div>
+                        <div className="text-[10px] sm:text-xs font-bold pl-2">{criticalCount > 0 ? <span className="text-rose-600">Butuh Perhatian!</span> : <span className="text-slate-500">Normal</span>}</div>
                     </div>
                 </div>
 
                 {/* PATIENT GRID */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {infusions.map((item) => (
-                        <div key={item.id} className={`rounded-2xl sm:rounded-[32px] p-4 sm:p-6 border transition-all ${item.status === 'warning' ? 'bg-rose-50 border-rose-200 shadow-md' : 'bg-white border-slate-200 shadow-sm hover:shadow-lg'}`}>
+                        <div key={item.id} className={`rounded-2xl sm:rounded-[32px] p-4 sm:p-6 border transition-all ${item.status === 'warning' ? 'bg-gradient-to-br from-rose-50 to-white border-rose-200 shadow-[0_4px_20px_rgba(244,63,94,0.1)]' : 'bg-gradient-to-br from-white to-slate-50/50 border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]'}`}>
                             <div className="flex justify-between items-start mb-4 sm:mb-6">
                                 <div className="flex items-start gap-3 sm:gap-4">
-                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center font-black text-base sm:text-lg ${item.status === 'warning' ? 'bg-rose-500 text-white' : 'bg-slate-100 text-slate-700'}`}>{item.room_number}</div>
+                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center font-black text-base sm:text-lg shadow-md ${item.status === 'warning' ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-[0_4px_12px_rgba(244,63,94,0.3)]' : 'bg-gradient-to-br from-slate-700 to-slate-800 text-white'}`}>{item.room_number}</div>
                                     <div>
                                         <h3 className="text-base sm:text-lg font-bold text-slate-800 line-clamp-1">{item.patient_name}</h3>
                                         <p className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item.fluid_type} • {item.drip_type}</p>
@@ -238,8 +240,8 @@ export default function Dashboard({ auth, infusions = [] }) {
                                             <div className="text-right"><p className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase mb-0.5 sm:mb-1">Rate</p><p className="text-lg sm:text-xl font-black text-slate-800">{item.tpm_calculated} <span className="text-[10px] sm:text-xs">tpm</span></p></div>
                                         </div>
                                         {/* Progress bar */}
-                                        <div className="h-1.5 sm:h-2 bg-slate-200 rounded-full overflow-hidden">
-                                            <div className={`h-full transition-all duration-1000 ${item.status === 'warning' ? 'bg-rose-500' : 'bg-emerald-500'}`} style={{ width: `${item.percentage_remaining}%` }}></div>
+                                        <div className="h-2 sm:h-2.5 bg-slate-200 rounded-full overflow-hidden">
+                                            <div className={`h-full rounded-full transition-all duration-1000 ${item.status === 'warning' ? 'bg-gradient-to-r from-rose-400 to-rose-600 shadow-[0_0_10px_rgba(244,63,94,0.4)]' : 'bg-gradient-to-r from-emerald-400 to-teal-500 shadow-[0_0_10px_rgba(16,185,129,0.4)]'}`} style={{ width: `${item.percentage_remaining}%` }}></div>
                                         </div>
                                         <div className="flex justify-between mt-1.5 sm:mt-2 text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                                             <span><Clock size={10} className="inline mr-1" /> {item.estimated_time_remaining}</span>
@@ -250,7 +252,7 @@ export default function Dashboard({ auth, infusions = [] }) {
                             </div>
 
                             {/* TOMBOL LIHAT CHARTING */}
-                            <Link href={`/recap/${item.id}`} className="w-full mt-3 sm:mt-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl border border-slate-200 flex items-center justify-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest hover:bg-emerald-50 hover:text-emerald-600 hover:border-emerald-200 transition-all bg-white shadow-sm">
+                            <Link href={`/recap/${item.id}`} className="w-full mt-3 sm:mt-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-white shadow-[0_4px_12px_rgba(16,185,129,0.25)] hover:shadow-[0_6px_16px_rgba(16,185,129,0.35)] hover:from-emerald-400 hover:to-teal-500 transition-all active:scale-[0.98]">
                                 <FileText size={14} className="sm:w-4 sm:h-4" /> Lihat Charting
                             </Link>
 
@@ -259,7 +261,7 @@ export default function Dashboard({ auth, infusions = [] }) {
                                 if (confirm(`Ganti infus untuk ${item.patient_name}? Infus lama akan ditandai selesai.`)) {
                                     router.post(`/infusions/${item.id}/ganti`, {}, { preserveScroll: true });
                                 }
-                            }} className="w-full mt-2 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl border border-amber-200 flex items-center justify-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest hover:bg-amber-50 hover:text-amber-600 hover:border-amber-300 transition-all bg-white shadow-sm">
+                            }} className="w-full mt-2 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white border border-amber-200 flex items-center justify-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-amber-600 hover:bg-amber-50 hover:border-amber-300 hover:shadow-[0_4px_12px_rgba(245,158,11,0.15)] transition-all active:scale-[0.98]">
                                 <RefreshCw size={14} className="sm:w-4 sm:h-4" /> Ganti Infus
                             </button>
                         </div>
@@ -295,7 +297,7 @@ export default function Dashboard({ auth, infusions = [] }) {
                                     <label className="text-[10px] font-bold text-slate-500 mb-2 sm:mb-3 block uppercase tracking-widest">Tipe Infus Set</label>
                                     <div className="flex gap-3 sm:gap-4">{['Makro', 'Mikro'].map(t => (<button key={t} type="button" onClick={() => setData('drip_type', t)} className={`flex-1 py-3 sm:py-4 rounded-lg sm:rounded-xl font-black text-xs uppercase transition-all border-2 ${data.drip_type === t ? 'bg-white border-emerald-500 text-emerald-600 shadow-sm' : 'bg-white border-slate-200 text-slate-500'}`}>{t} Set</button>))}</div>
                                 </div>
-                                <button disabled={processing} className="w-full bg-emerald-500 text-white py-4 sm:py-5 rounded-xl sm:rounded-[20px] font-black text-xs sm:text-sm uppercase tracking-widest shadow-lg active:scale-95 transition-all disabled:opacity-70">Mulai Monitoring</button>
+                                <button disabled={processing} className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-4 sm:py-5 rounded-xl sm:rounded-[20px] font-black text-xs sm:text-sm uppercase tracking-widest shadow-[0_8px_24px_rgba(16,185,129,0.3)] hover:shadow-[0_12px_32px_rgba(16,185,129,0.4)] active:scale-95 transition-all disabled:opacity-70">Mulai Monitoring</button>
                             </form>
                         </div>
                     </div>

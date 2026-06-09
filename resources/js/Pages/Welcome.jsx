@@ -123,24 +123,33 @@ export default function Welcome({ auth }) {
                             <Link href={auth.user ? route('dashboard') : route('login')} className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-10 py-5 rounded-[20px] text-sm font-black uppercase tracking-widest shadow-[0_10px_30px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_40px_rgba(16,185,129,0.4)] hover:-translate-y-1 transition-all flex items-center gap-3 w-full sm:w-auto justify-center group border border-emerald-400/30">
                                 <Activity size={20} className="group-hover:animate-pulse" /> Mulai Pemantauan
                             </Link>
-                            <a href="#fitur" className="px-10 py-5 rounded-[20px] text-sm font-black uppercase tracking-widest text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-300 bg-white/80 hover:bg-slate-100 transition-all w-full sm:w-auto text-center backdrop-blur-sm shadow-sm hover:shadow-md">
+                            <a href="#fitur" className="px-10 py-5 rounded-[20px] text-sm font-black uppercase tracking-widest text-slate-600 hover:text-emerald-600 border border-emerald-200 hover:border-emerald-300 bg-white/80 hover:bg-emerald-50 transition-all w-full sm:w-auto text-center backdrop-blur-sm shadow-[0_4px_12px_rgba(16,185,129,0.08)] hover:shadow-[0_6px_16px_rgba(16,185,129,0.15)]">
                                 Jelajahi Fitur Unggulan
                             </a>
                         </div>
 
                         {/* Stats */}
-                        <div className="grid grid-cols-3 gap-6 mt-16 pt-10 border-t border-slate-200 max-w-2xl mx-auto lg:mx-0">
-                            <div>
-                                <h4 className="text-3xl font-black text-slate-800 mb-1">24<span className="text-emerald-500">/7</span></h4>
-                                <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Monitoring Berkelanjutan</p>
+                        <div className="grid grid-cols-3 gap-4 mt-16 pt-10 border-t border-slate-200 max-w-2xl mx-auto lg:mx-0">
+                            <div className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-emerald-100 shadow-[0_4px_16px_rgba(16,185,129,0.06)]">
+                                <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white mb-3 shadow-[0_4px_12px_rgba(16,185,129,0.3)]">
+                                    <Clock size={18} />
+                                </div>
+                                <h4 className="text-2xl font-black text-slate-800 mb-1">24<span className="text-emerald-500">/7</span></h4>
+                                <p className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">Monitoring Berkelanjutan</p>
                             </div>
-                            <div>
-                                <h4 className="text-3xl font-black text-slate-800 mb-1">99<span className="text-emerald-500">%</span></h4>
-                                <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Presisi Tingkat Medis</p>
+                            <div className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-emerald-100 shadow-[0_4px_16px_rgba(16,185,129,0.06)]">
+                                <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white mb-3 shadow-[0_4px_12px_rgba(16,185,129,0.3)]">
+                                    <Activity size={18} />
+                                </div>
+                                <h4 className="text-2xl font-black text-slate-800 mb-1">99<span className="text-emerald-500">%</span></h4>
+                                <p className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">Presisi Tingkat Medis</p>
                             </div>
-                            <div>
-                                <h4 className="text-3xl font-black text-slate-800 mb-1">0<span className="text-emerald-500">.5s</span></h4>
-                                <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Respons Kritis Instan</p>
+                            <div className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-emerald-100 shadow-[0_4px_16px_rgba(16,185,129,0.06)]">
+                                <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white mb-3 shadow-[0_4px_12px_rgba(16,185,129,0.3)]">
+                                    <AlertCircle size={18} />
+                                </div>
+                                <h4 className="text-2xl font-black text-slate-800 mb-1">0<span className="text-emerald-500">.5s</span></h4>
+                                <p className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">Respons Kritis Instan</p>
                             </div>
                         </div>
                     </div>
